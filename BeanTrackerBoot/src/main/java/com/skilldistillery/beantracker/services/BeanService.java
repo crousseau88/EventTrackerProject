@@ -10,4 +10,16 @@ import com.skilldistillery.beantracker.entities.Beans;
 public interface BeanService {
 	
 	List<Beans> index();
+	
+	List<Beans> findById(int id);
+	
+	Beans createRoast(Beans bean);
+
+	boolean delete(int id);
+
+	Beans updateBeans( Beans bean, Integer beanId);
+
+	
+
+	List<Beans> getBeansByKeyword(String keyword);
 }

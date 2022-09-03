@@ -18,7 +18,7 @@ class BeanTests {
 	private EntityManager em;
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
-		emf = Persistence.createEntityManagerFactory("BeanTracker");
+		emf = Persistence.createEntityManagerFactory("BeanTrackerJPA");
 	}
 
 	@AfterAll
