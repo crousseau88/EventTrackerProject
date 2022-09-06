@@ -18,6 +18,8 @@ Although this is titled as an event tracker it is far from being an application 
 
 * JSON for Creating a new Roast (bean)
 
+
+
 ```
 {
 
@@ -33,47 +35,31 @@ Although this is titled as an event tracker it is far from being an application 
         "rating": 3.95
     }
 ```
+* GET List All Beans
+```http://localhost:8082/api/beans/
 
-
-
-    * GET List All Beans
 ```
-    http://localhost:8082/api/beans/
+* GET Find Beans by ID
 
-   ```
-
-
-    * GET Find Beans by ID
+  ```http://localhost:8082/api/beans/2
 
   ```
-   http://localhost:8082/api/beans/2
+* GET Find Beans by Keyword
+
+```http://localhost:8082/api/beans/search/Ethiopia
   ```
+* POST Create a New Roast
 
-
-    * GET Find Beans by Keyword
-```
-   http://localhost:8082/api/beans/search/Ethiopia
+```  http://localhost:8082/api/beans
   ```
+* PUT Update a Roast
 
-
-    * POST Create a New Roast
-```
-    http://localhost:8082/api/beans
+```  http://localhost:8082/api/beans/2
   ```
+* DELETE Delete a Roast
 
-
-    * PUT Update a Roast
-```
-    http://localhost:8082/api/beans/2
-  ```
-
-
-    * DELETE Delete a Roast
-```
-    http://localhost:8082/api/beans/7
+```http://localhost:8082/api/beans/7
   ```  
-
-
 
 ### TODO!!! URL OF DEPLOYED APP
 
