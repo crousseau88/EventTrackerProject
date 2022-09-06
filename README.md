@@ -34,31 +34,37 @@ Although this is titled as an event tracker it is far from being an application 
     }
 ```
 
+```
     * GET List All Beans
 
-    ```
     http://localhost:8082/api/beans/
-    ```
+  ```  
+  ```
     * GET Find Beans by ID
-    ```
+
     http://localhost:8082/api/beans/2
     ```
+  ```  
     * GET Find Beans by Keyword
-    ```
+
     http://localhost:8082/api/beans/search/Africa
     ```
-    * POST Create a New Roast
     ```
+    * POST Create a New Roast
+
     http://localhost:8082/api/beans
     ```
-    * PUT Update a Roast
     ```
+    * PUT Update a Roast
+
     http://localhost:8082/api/beans/2
     ```
-    * DELETE Delete a Roast
     ```
+    * DELETE Delete a Roast
+
     http://localhost:8082/api/beans/7
     ```
+
 
 
 ### TODO!!! URL OF DEPLOYED APP
