@@ -11,7 +11,7 @@ public interface BeanService {
 	
 	List<Beans> index();
 	
-	List<Beans> findById(int id);
+	Beans findById(int id);
 	
 	Beans createRoast(Beans bean);
 

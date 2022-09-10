@@ -38,7 +38,6 @@ Although this is titled as an event tracker it is far from being an application 
 * GET List All Beans
 ```
 http://localhost:8082/api/beans/
-
 ```
 * GET Find Beans by ID
 

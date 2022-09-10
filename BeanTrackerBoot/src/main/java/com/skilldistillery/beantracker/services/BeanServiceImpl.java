@@ -1,7 +1,6 @@
 package com.skilldistillery.beantracker.services;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,7 +19,7 @@ public class BeanServiceImpl implements BeanService {
 		return beanRepo.findAll();
 	}
 
-	public List<Beans> findById(int id) {
+	public Beans findById(int id) {
 		if(! beanRepo.existsById(id)) {
 			return null;
 		}

@@ -30,8 +30,8 @@ public class BeanController {
 	}
 	
 	 @GetMapping("beans/{id}")
-		public List<Beans> listBeansById(@PathVariable Integer id, HttpServletResponse res){
-	        List<Beans> comments = beanServ.findById(id);
+		public Beans listBeansById(@PathVariable Integer id, HttpServletResponse res){
+	        Beans comments = beanServ.findById(id);
 	        if(comments == null) {
 	            res.setStatus(404);
 	        }
