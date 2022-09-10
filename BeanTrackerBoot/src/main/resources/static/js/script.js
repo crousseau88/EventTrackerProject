@@ -38,6 +38,8 @@ function init() {
         let id = document.deleteById.id.value;
         deleteById(id);
     });
+    
+    document.updateForm.updateBeans.addEventListener('click', updateBeans);
 }
 function loadAllEvents() {
 	let xhr = new XMLHttpRequest();
@@ -57,15 +59,24 @@ function loadAllEvents() {
 }
 
 function displayBeans(beanList) {
-	let dataDiv = document.getElementById("beanList");
-	dataDiv.textContent = '';
-	let ul = document.createElement('ul');
-	dataDiv.appendChild(ul);
+	let tbody = document.querySelector('#beanList>table>tbody');
+	tbody.textContent = '';
 	for (let bean of beanList) {
-		let li = document.createElement('li');
-		li.textContent = bean.name;
-		ul.appendChild(li);
-	}
+		let tr = document.createElement('tr');
+		tbody.appendChild(tr);
+		let td = document.createElement('td');
+		td.textContent = bean.id;
+		tr.appendChild(td);
+		td = document.createElement('td');
+		td.textContent = bean.name;
+		tr.appendChild(td);
+		td = document.createElement('td');
+		td.textContent = bean.brand;
+		tr.appendChild(td);
+		tr.addEventListener('click', function(evt){
+			console.log('Selected bean ' + bean.id);
+	});
+}
 }
 
 	function getBean(beanId) {
@@ -171,4 +182,43 @@ function displayBeans(beanList) {
         };
     }
     xhr.send();
+}
+
+function updateBeans(e) {
+    e.preventDefault();
+    let bean = {
+                
+        name:  document.updateForm.name.value,
+        brand: document.updateForm.brand.value,
+        type: document.updateForm.type.value,
+        process: document.updateForm.process.value,
+        growingRegion: document.updateForm.growingRegion.value,
+        growingAltitude: document.updateForm.growingAltitude.value,
+        blendBase: document.updateForm.blendBase.value,
+        roastLevel: document.updateForm.roastLevel.value,
+        buyAgain: document.updateForm.buyAgain.value,
+        rating: document.updateForm.rating.value
+     }   
+        
+    
+    console.log(bean)
+    let xhr = new XMLHttpRequest();
+    xhr.open('PUT', 'api/beans/' + document.updateForm.id.value, true);
+    
+    xhr.setRequestHeader("Content-type", "application/json");
+    
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4) {
+            if (xhr.status == 200 || xhr.status == 201) {
+                let ritual = JSON.parse(xhr.responseText);
+                console.log(bean);
+                displayBean(bean);
+            }
+            else {
+                console.error("POST request failed.");
+                console.error(xhr.status + ": " + xhr.responseText);
+            }
+        }
+    };
+    xhr.send(JSON.stringify(bean));
 }

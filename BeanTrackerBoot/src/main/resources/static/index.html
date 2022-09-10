@@ -17,7 +17,18 @@
 	<div id="output">
 		<div id="beanData"></div>
 	</div>
-	<div id='beanList'><ul></ul></div>
+	
+	<div id='beanList' ><table class="table" name="beanList">
+			<thead class="table">
+				<tr>
+					<th>Id</th>
+					<th>Name</th>
+					<th>Brand</th>
+				</tr>
+			</thead>
+			<tbody></tbody>
+		</table></div>
+		
 	<form name="deleteById">
         <input type="number" name="id">
         <button name="delete">Delete Bean by ID</button>
@@ -52,6 +63,35 @@
 			<button name="addBean">Add Bean</button>
 		</form>
 	</div>
-
+	<div id="updateFormDiv">
+		<hr>
+		<form name="updateForm">Id: <input type="text" name="id"><br>
+			<label for="name">Name</label> <input id="name" type="text" name="name">
+			<br> 
+			<label for="brand">Brand</label> <input id = "brand" type="text" name="brand"> <br> 
+				
+				<label for="type">Blend or Single Origin</label> <input id = "type" type="text" name="type"> <br>				
+				 <label
+				for="process">Process</label> <input id ="process" type="text" name="process"><br> 			
+			<label for="growingRegion">Growing Region</label> <input
+			id="growingRegion"	type="text" name="growingRegion"> <br> 
+				<label
+				for="growingAltitude">Growing Altitude</label> <input type="number"
+				name="growingAltitude" id="growingAltitude"> <br> 
+				<label for="blendBase">Blend Base</label> <input type="text" name="blendBase" id="blendBase"> <br>
+				 <label
+				for="roastLevel">Roast Level</label> <input type="text"
+				name="roastLevel" id="roastLevel" > <br>
+				 <label for="buyAgain">Buy Again?</label> 
+				<select name="buyAgain">
+				<option value="true">Yes</option>
+				<option value="false">No</option>
+			</select><br>
+			
+			 <label for="rating">Rating</label> <input type="number"
+				name="rating" id="rating" min="1" max="5"> <br>
+			<button id="updateBeans" name="updateBeans">Update Bean</button>
+		</form>
+	</div>
 </body>
 </html>
