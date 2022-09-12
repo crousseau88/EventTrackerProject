@@ -75,4 +75,9 @@ http://localhost:8082/api/beans/7
 * Spring Data JPA
 * Spring Boot
 * Spring MVC
+* JavaScript
+* JSON
+* AJAX
+* DOM
+* XHR
 * AWS-EC2

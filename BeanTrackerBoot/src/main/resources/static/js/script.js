@@ -210,12 +210,12 @@ function updateBeans(e) {
     xhr.onreadystatechange = function() {
         if (xhr.readyState === 4) {
             if (xhr.status == 200 || xhr.status == 201) {
-                let ritual = JSON.parse(xhr.responseText);
+                let bean = JSON.parse(xhr.responseText);
                 console.log(bean);
                 displayBean(bean);
             }
             else {
-                console.error("POST request failed.");
+                console.error("PUT request failed.");
                 console.error(xhr.status + ": " + xhr.responseText);
             }
         }
