@@ -65,7 +65,7 @@ http://localhost:8082/api/beans/2
 http://localhost:8082/api/beans/7
 ```  
 
-### TODO!!! URL OF DEPLOYED APP
+### http://34.206.35.233:8080/BeanTrackerBoot/
 
 ## Technologies Used
 
@@ -81,3 +81,7 @@ http://localhost:8082/api/beans/7
 * DOM
 * XHR
 * AWS-EC2
+* Angular
+* TypeScript
+* CSS
+* HTML
