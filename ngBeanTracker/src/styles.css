@@ -26,16 +26,20 @@ h1 {
   border-collapse: collapse;
   margin-left: auto;
   margin-right: auto;
-  color: orangered;
+
   font-size: 0.9em;
   font-family: 'Bungee Spice', cursive;
   min-width: 400px;
-  box-shadow: 0 0 20px rgba(148, 6, 6, 0.872);
+
 }
 .styled-table thead tr {
-  background-color: #eceae3;
+  /* background-color: #eceae3; */
   color: orange;
   text-align: left;
+  border-top: 1px solid #dddddd;
+  border-bottom: 1px solid #dddddd;
+  border-left: 1px solid #dddddd;
+  border-right: 1px solid #dddddd;
 }
 .styled-table th,
 .styled-table td {
@@ -43,14 +47,15 @@ h1 {
 }
 .styled-table tbody tr {
   border-bottom: 1px solid #dddddd;
+  border-left: 1px solid #dddddd;
+  border-right: 1px solid #dddddd;
 }
 
-.styled-table tbody tr:nth-of-type(even) {
-  background-color: #f3f3f3;
-}
 
 .styled-table tbody tr:last-of-type {
-  border-bottom: 2px solid #0e0bb3;
+  border-bottom: 1px solid #dddddd;
+  border-left: 1px solid #dddddd;
+  border-right: 1px solid #dddddd;
 }
 
 .input {
@@ -58,7 +63,6 @@ h1 {
   font-size: max(16px, 1em);
   font-family: 'Bungee Spice', cursive;
   padding: 0.25em 0.5em;
-  background-color: rgb(187, 12, 12);
   border: 2px solid var(--input-border);
   border-radius: 4px;
 }
@@ -69,6 +73,15 @@ h1 {
 input[type="text"] {
   font-size: 0.9em;
   padding-top: 0.35rem;
+  background-color: gray;
+}
+input[type="number"] {
+  font-size: 0.9em;
+  padding-top: 0.35rem;
+  background-color: gray;
+}
+input[type="radio"] {
+  accent-color: orangered;
 }
 body {
   background-image: url("https://img.freepik.com/free-photo/person-serving-cup-coffee-with-metal-jug_1286-243.jpg?w=1060&t=st=1663526170~exp=1663526770~hmac=be038096eec295e6ff3eebf0e13adee41ed04a777df3d37a5bbd729a58199a1e");

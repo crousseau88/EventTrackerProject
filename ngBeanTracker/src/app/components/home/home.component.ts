@@ -100,17 +100,6 @@ export class HomeComponent implements OnInit {
     this.selected = selectedBean;
   }
 
-  getBadgeColor(): string {
-    let count = this.getNumberOfBeans();
-    if (count > 10) {
-      return 'bg-danger';
-    } else if (count > 5) {
-      return 'bg-warning';
-    } else   {
-      return 'bg-success';
-    }
-  }
-
   reload(): void {
     this.beansService.index().subscribe({
       next: (beans) => {
