@@ -1,3 +1,76 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.css";
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap');
 
+
+h1 {
+  font-family: 'Bungee Spice', cursive;
+  text-align: center;
+}
+
+.selected-style{
+  font-family: 'Bungee Spice', cursive;
+  text-align: center;
+
+}
+.col-12 {
+  font-family: 'Bungee Spice', cursive;
+  text-align: center;
+}
+.col-md-6 {
+  font-family: 'Bungee Spice', cursive;
+  text-align: center;
+}
+.styled-table {
+  position: center;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: orangered;
+  font-size: 0.9em;
+  font-family: 'Bungee Spice', cursive;
+  min-width: 400px;
+  box-shadow: 0 0 20px rgba(148, 6, 6, 0.872);
+}
+.styled-table thead tr {
+  background-color: #eceae3;
+  color: orange;
+  text-align: left;
+}
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+.styled-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+  border-bottom: 2px solid #0e0bb3;
+}
+
+.input {
+  font-size: 16px;
+  font-size: max(16px, 1em);
+  font-family: 'Bungee Spice', cursive;
+  padding: 0.25em 0.5em;
+  background-color: rgb(187, 12, 12);
+  border: 2px solid var(--input-border);
+  border-radius: 4px;
+}
+.input:not(textarea) {
+  line-height: 1;
+  height: 2.25rem;
+}
+input[type="text"] {
+  font-size: 0.9em;
+  padding-top: 0.35rem;
+}
+body {
+  background-image: url("https://img.freepik.com/free-photo/person-serving-cup-coffee-with-metal-jug_1286-243.jpg?w=1060&t=st=1663526170~exp=1663526770~hmac=be038096eec295e6ff3eebf0e13adee41ed04a777df3d37a5bbd729a58199a1e");
+  background-color: #cccccc;
+ }

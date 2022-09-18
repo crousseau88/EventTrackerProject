@@ -1,21 +1,7 @@
-<form>
-  ID: <input type="text" name="beanId" [(ngModel)]="newBean.id"><br>
-  Name: <input type="text" name="name" [(ngModel)]="newBean.name"><br>
-  Brand: <input type="text" name="brand" [(ngModel)]="newBean.brand"><br>
-  Type: <input type="text" name="type" [(ngModel)]="newBean.type"><br>
-  Process: <input type="text" name="process" [(ngModel)]="newBean.process"><br>
-  Growing Region: <input type="text" name="growingRegion" [(ngModel)]="newBean.growingRegion"><br>
-  Growing Altitude: <input type="text" name="growingAltitude" [(ngModel)]="newBean.growingAltitude"><br>
-  Blend Base: <input type="text" name="blendBase" [(ngModel)]="newBean.blendBase"><br>
-  Roast Level: <input type="text" name="roastLevel" [(ngModel)]="newBean.roastLevel"><br>
-  Buy Again: Yes <input type="radio" name="buyAgain" [(ngModel)]="newBean.buyAgain" [value]="true">
-  No<input type="radio" name="buyAgain" [(ngModel)]="newBean.buyAgain" [value]="false"><br>
-  Rating: <input type="number" name="rating" min="1" max="5" [(ngModel)]="newBean.rating"><br>
-  <button (click)="addBean()">Add Bean</button>
-
-  <table>
+<h1>Track Your Favorite Coffees</h1>
+ <table class="styled-table">
     <thead>
-      <tr>
+      <tr >
         <td>ID</td>
         <td>Name</td>
       </tr>
@@ -27,8 +13,47 @@
       </tr>
     </tbody>
   </table>
+<hr>
+<h1>Add Beans To Your List!</h1>
+<form  class="row g-3">
+<div class="col-md-6">
+  Name: <input type="text" name="name" [(ngModel)]="newBean.name"><br>
+</div>
+  <div class="col-md-6">
+  Brand: <input type="text" name="brand" [(ngModel)]="newBean.brand"><br>
+</div>
+  <div class="col-md-6">
+  Type: <input type="text" name="type" [(ngModel)]="newBean.type"><br>
+</div>
+  <div class="col-md-6">
+  Process: <input type="text" name="process" [(ngModel)]="newBean.process"><br>
+</div>
+  <div class="col-md-6">
+  Growing Region: <input type="text" name="growingRegion" [(ngModel)]="newBean.growingRegion"><br>
+</div>
+  <div class="col-md-6">
+  Growing Altitude: <input type="text" name="growingAltitude" [(ngModel)]="newBean.growingAltitude"><br>
+</div>
+  <div class="col-md-6">
+  Blend Base: <input type="text" name="blendBase" [(ngModel)]="newBean.blendBase"><br>
+</div>
+  <div class="col-md-6">
+  Roast Level: <input type="text" name="roastLevel" [(ngModel)]="newBean.roastLevel"><br>
+</div>
+  <div class="col-md-6">
+  Buy Again: Yes <input type="radio" name="buyAgain" [(ngModel)]="newBean.buyAgain" [value]="true">
+  No<input type="radio" name="buyAgain" [(ngModel)]="newBean.buyAgain" [value]="false"><br>
+</div>
+  <div class="col-md-6">
+  Rating: <input type="number" name="rating" min="1" max="5" [(ngModel)]="newBean.rating"><br>
+</div >
+<div class="col-12">
+  <button (click)="addBean()" class="btn btn-warning">Add Bean</button>
+</div>
+</form>
+<hr>
 
-  <div *ngIf="selected">
+  <div class="selected-style" *ngIf="selected">
   <p>Bean ID: {{selected.id}}</p>
   <p>Name: {{selected.name}}</p>
   <p>Brand: {{selected.brand}}</p>
@@ -40,11 +65,11 @@
   <p>Roast Level: {{selected.roastLevel}}</p>
   <p>Buy Again: {{selected.buyAgain}}</p>
   <p>Rating: {{selected.rating}}</p>
-  <button (click)="selected=null">Back</button> <br>
-  <button (click)="setEditBean()" class="btn btn-outline-primary">Edit</button>
+  <button (click)="selected=null" class="btn btn-warning">Back</button> <br>
+  <button (click)="setEditBean()" class="btn btn-success">Edit</button>
   <button (click)="deleteBean(selected.id)" class="btn btn-danger">Delete</button>
   </div>
-
+<hr>
   <div id="beanUpdate" *ngIf="editBean">
     <form>
       <div class="form-group">
