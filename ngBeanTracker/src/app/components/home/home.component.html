@@ -1,0 +1,105 @@
+<form>
+  ID: <input type="text" name="beanId" [(ngModel)]="newBean.id"><br>
+  Name: <input type="text" name="name" [(ngModel)]="newBean.name"><br>
+  Brand: <input type="text" name="brand" [(ngModel)]="newBean.brand"><br>
+  Type: <input type="text" name="type" [(ngModel)]="newBean.type"><br>
+  Process: <input type="text" name="process" [(ngModel)]="newBean.process"><br>
+  Growing Region: <input type="text" name="growingRegion" [(ngModel)]="newBean.growingRegion"><br>
+  Growing Altitude: <input type="text" name="growingAltitude" [(ngModel)]="newBean.growingAltitude"><br>
+  Blend Base: <input type="text" name="blendBase" [(ngModel)]="newBean.blendBase"><br>
+  Roast Level: <input type="text" name="roastLevel" [(ngModel)]="newBean.roastLevel"><br>
+  Buy Again: Yes <input type="radio" name="buyAgain" [(ngModel)]="newBean.buyAgain" [value]="true">
+  No<input type="radio" name="buyAgain" [(ngModel)]="newBean.buyAgain" [value]="false"><br>
+  Rating: <input type="number" name="rating" min="1" max="5" [(ngModel)]="newBean.rating"><br>
+  <button (click)="addBean()">Add Bean</button>
+
+  <table>
+    <thead>
+      <tr>
+        <td>ID</td>
+        <td>Name</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let bean of beans" (click)="viewDetails(bean)">
+        <td>{{bean.id}}</td>
+        <td>{{bean.name}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="selected">
+  <p>Bean ID: {{selected.id}}</p>
+  <p>Name: {{selected.name}}</p>
+  <p>Brand: {{selected.brand}}</p>
+  <p>Type: {{selected.type}}</p>
+  <p>Process: {{selected.process}}</p>
+  <p>Growing Region: {{selected.growingRegion}}</p>
+  <p>Growing Altitude: {{selected.growingAltitude}}</p>
+  <p>Blend Base: {{selected.blendBase}}</p>
+  <p>Roast Level: {{selected.roastLevel}}</p>
+  <p>Buy Again: {{selected.buyAgain}}</p>
+  <p>Rating: {{selected.rating}}</p>
+  <button (click)="selected=null">Back</button> <br>
+  <button (click)="setEditBean()" class="btn btn-outline-primary">Edit</button>
+  <button (click)="deleteBean(selected.id)" class="btn btn-danger">Delete</button>
+  </div>
+
+  <div id="beanUpdate" *ngIf="editBean">
+    <form>
+      <div class="form-group">
+      <label for="name" class="form-label">Name</label>
+      <input type="text" name="name" [(ngModel)]="editBean.name" class="form-control"/>
+    </div>
+
+    <div class="form-group">
+      <label for="name" class="form-label">Brand</label>
+      <input type="text" name="brand" [(ngModel)]="editBean.brand" class="form-control"/>
+    </div>
+
+    <div class="form-group">
+      <label for="name" class="form-label">Type</label>
+      <input type="text" name="type" [(ngModel)]="editBean.type" class="form-control"/>
+    </div>
+
+    <div class="form-group">
+      <label for="name" class="form-label">Process</label>
+      <input type="text" name="process" [(ngModel)]="editBean.process" class="form-control"/>
+    </div>
+
+    <div class="form-group">
+      <label for="name" class="form-label">Growing Region</label>
+      <input type="text" name="growingRegion" [(ngModel)]="editBean.growingRegion" class="form-control"/>
+    </div>
+
+    <div class="form-group">
+      <label for="name" class="form-label">Growing Altitude</label>
+      <input type="text" name="growingAltitude" [(ngModel)]="editBean.growingAltitude" class="form-control"/>
+    </div>
+
+    <div class="form-group">
+      <label for="name" class="form-label">Blend Base</label>
+      <input type="text" name="blendBase" [(ngModel)]="editBean.blendBase" class="form-control"/>
+    </div>
+
+    <div class="form-group">
+      <label for="name" class="form-label">Roast Level</label>
+      <input type="text" name="roastLevel" [(ngModel)]="editBean.roastLevel" class="form-control"/>
+    </div>
+
+    <div class="form-group">
+      <label for="name" class="form-label">Buy Again</label>
+      Yes: <input type="radio" name="buyAgain" [(ngModel)]="editBean.buyAgain" [value]="true">
+      No: <input type="radio" name="buyAgain" [(ngModel)]="editBean.buyAgain" [value]="false"><br>
+
+    </div>
+
+    <div class="form-group">
+      <label for="name" class="form-label">Rating</label>
+      <input type="number" name="rating" min="1" max="5" [(ngModel)]="editBean.rating" class="form-control"/>
+    </div>
+    <button (click)="editBean = null" class="btn btn-danger">Cancel Edit</button>
+    <button (click)="updateBean(editBean)" class="btn btn-success">Save Edit</button>
+    </form>
+    </div>
+
