@@ -1,3 +1,4 @@
+import { environment } from './../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { throwError } from 'rxjs/internal/observable/throwError';
@@ -8,8 +9,8 @@ import { Bean } from 'src/models/bean';
   providedIn: 'root'
 })
 export class BeansService {
-  private baseUrl = 'http://localhost:8082/'; // adjust port to match server
-  private url = this.baseUrl + 'api/beans'; // change 'Beans' to your API path
+  // private baseUrl = 'http://localhost:8082/'; // adjust port to match server
+  private url = environment.baseUrl + 'api/beans'; // change 'Beans' to your API path
   constructor(private http: HttpClient) { }
 
 
